@@ -1,7 +1,7 @@
 _base_ = [
     '../_base_/models/faster-rcnn_r50_fpn.py',
     '../_base_/datasets/dior.py',
-    '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py'
+    '../_base_/schedules/schedule_50e.py', '../_base_/default_runtime.py'
 ]
 
 model = dict(roi_head=dict(bbox_head=dict(num_classes=20)))
@@ -13,5 +13,7 @@ val_dataloader = dict(
     batch_size=batch_size)
 test_dataloader = dict(
     batch_size=batch_size)
+
+default_hooks = dict(checkpoint=dict(type='CheckpointHook', interval=10))
 
 auto_scale_lr = dict(enable=True)
