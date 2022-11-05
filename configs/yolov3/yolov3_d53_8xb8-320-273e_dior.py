@@ -33,6 +33,11 @@ test_pipeline = [
         meta_keys=('img_id', 'img_path', 'ori_shape', 'img_shape',
                    'scale_factor'))
 ]
-train_dataloader = dict(dataset=dict(pipeline=train_pipeline))
-val_dataloader = dict(dataset=dict(pipeline=test_pipeline))
-test_dataloader = dict(dataset=dict(pipeline=test_pipeline))
+
+batch_size = 32
+train_dataloader = dict(batch_size=batch_size,
+                        dataset=dict(pipeline=train_pipeline))
+val_dataloader = dict(batch_size=batch_size,
+                      dataset=dict(pipeline=test_pipeline))
+test_dataloader = dict(batch_size=batch_size,
+                       dataset=dict(pipeline=test_pipeline))

@@ -16,7 +16,12 @@ Personal maintenance and use.
 
 ```shell
 conda create -n mmdet_dior python=3.8
+conda activate mmdet_dior
+
 conda install -c pytorch pytorch torchvision
+# or
+pip3 install torch torchvision
+
 pip install openmim
 mim install mmengine 'mmcv>=2.0.0rc0' 'mmdet>=3.0.0rc0'
 ```

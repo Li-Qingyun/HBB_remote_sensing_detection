@@ -69,8 +69,8 @@ model = dict(
         nms=dict(type='nms', iou_threshold=0.45),
         max_per_img=100))
 # overwrite dataset settings
-batch_size = 8
-num_workers = 8
+batch_size = 4
+num_workers = 4
 
 file_client_args = dict(backend='disk')
 

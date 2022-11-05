@@ -4,6 +4,8 @@ _base_ = [
     '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py'
 ]
 
+model = dict(roi_head=dict(bbox_head=dict(num_classes=20)))
+
 batch_size = 8
 train_dataloader = dict(
     batch_size=batch_size)
