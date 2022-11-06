@@ -36,6 +36,8 @@ mim install mmengine 'mmcv>=2.0.0rc0' 'mmdet>=3.0.0rc0'
 
 ## Launch Experiments
 
+Using [mim](https://github.com/open-mmlab/mim) to deal with experiments.
+
 ```shell
 # training
 mim train mmdet {config}  # train on single gpu
