@@ -1,4 +1,4 @@
-_base_ = './yolov3_d53_8xb8-ms-608-273e_dior.py'
+_base_ = './yolov3_d53_2xb4-ms-608-273e_dior.py'
 # dataset settings
 # file_client_args = dict(
 #     backend='petrel',
