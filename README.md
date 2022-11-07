@@ -53,9 +53,9 @@ mim test mmdet {config} --checkpoint {checkpont} --gpus {num_gpus} --launcher py
 
 ## Results
 
-| Detector                                                     | AP50 | APs  | APm  | APl  |
-| ------------------------------------------------------------ | ---- | ---- | ---- | ---- |
-| [YOLO v3 (darknet53, 320)](configs/yolov3/yolov3_d53_2xb32-320-273e_dior.py) | 55.8 | 9.2  | 42.7 | 81.1 |
-| [YOLO v3 (darknet53, ms-608)](configs/yolov3/yolov3_d53_2xb4-ms-608-273e_dior.py) | 57.4 | 21.6 | 49.5 | 74.5 |
-| [Faster RCNN (resnet50+fpn)](configs/faster_rcnn/faster-rcnn_r50_fpn_2xb2-50e_dior.py) |      |      |      |      |
+| Detector                                                     | AP50   | APs    | APm    | APl    |
+| ------------------------------------------------------------ | ------ | ------ | ------ | ------ |
+| [YOLO v3 (darknet53, 320)](configs/yolov3/yolov3_d53_2xb32-320-273e_dior.py) | 55.8   | 9.2    | 42.7   | 81.1   |
+| [YOLO v3 (darknet53, ms-608)](configs/yolov3/yolov3_d53_2xb4-ms-608-273e_dior.py) | 57.4   | 21.6   | 49.5   | 74.5   |
+| [Faster RCNN (resnet50+fpn)](configs/faster_rcnn/faster-rcnn_r50_fpn_2xb8-30e_dior.py) | *54.8* | *18.5* | *45.3* | *75.5* |
 

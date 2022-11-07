@@ -5,6 +5,17 @@ _base_ = [
     '../_base_/default_runtime.py',
     '../_base_/datasets/dior.py'
 ]
+base_size_type = 'original'
+prepared_base_sizes = {
+    'original': [[(116, 90), (156, 198), (373, 326)],
+                 [(30, 61), (62, 45), (59, 119)],
+                 [(10, 13), (16, 30), (33, 23)]],
+    'differential_evolution': [[8, 15], [18, 8], [14, 30],
+                               [31, 14], [52, 26], [27, 57],
+                               [72, 99], [142, 148], [309, 348]],
+    'k-means': [[15, 14], [20, 41], [46, 21],
+                [60, 69], [92, 135], [179, 140],
+                [162, 344], [378, 191], [362, 428]]}
 # model settings
 data_preprocessor = dict(
     type='DetDataPreprocessor',
@@ -32,9 +43,7 @@ model = dict(
         out_channels=[1024, 512, 256],
         anchor_generator=dict(
             type='YOLOAnchorGenerator',
-            base_sizes=[[(116, 90), (156, 198), (373, 326)],
-                        [(30, 61), (62, 45), (59, 119)],
-                        [(10, 13), (16, 30), (33, 23)]],
+            base_sizes=prepared_base_sizes[base_size_type],
             strides=[32, 16, 8]),
         bbox_coder=dict(type='YOLOBBoxCoder'),
         featmap_strides=[32, 16, 8],
