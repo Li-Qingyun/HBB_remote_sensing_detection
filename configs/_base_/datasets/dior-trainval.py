@@ -44,9 +44,9 @@ train_dataloader = dict(
         type=dataset_type,
         data_root=data_root,
         metainfo=metainfo,
-        ann_file='coco_ann/DIOR_train_coco.json',
+        ann_file='coco_ann/DIOR_trainval_coco.json',
         data_prefix=dict(img='JPEGImages-trainval/'),
-        filter_cfg=dict(filter_empty_gt=True, min_size=32),  # TODO
+        filter_cfg=dict(filter_empty_gt=True, min_size=0),  # TODO
         pipeline=train_pipeline))
 val_dataloader = dict(
     batch_size=4,
@@ -58,8 +58,8 @@ val_dataloader = dict(
         type=dataset_type,
         data_root=data_root,
         metainfo=metainfo,
-        ann_file='coco_ann/DIOR_val_coco.json',
-        data_prefix=dict(img='JPEGImages-trainval/'),
+        ann_file='coco_ann/DIOR_test_coco.json',
+        data_prefix=dict(img='JPEGImages-test/'),
         test_mode=True,
         pipeline=test_pipeline))
 test_dataloader = dict(
@@ -79,7 +79,7 @@ test_dataloader = dict(
 
 val_evaluator = dict(
     type='CocoMetric',
-    ann_file=data_root + 'coco_ann/DIOR_val_coco.json',
+    ann_file=data_root + 'coco_ann/DIOR_test_coco.json',
     metric='bbox',
     format_only=False,
     classwise=True)
