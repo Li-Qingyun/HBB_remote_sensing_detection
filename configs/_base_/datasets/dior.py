@@ -5,11 +5,17 @@ dataset_type = 'CocoDataset'
 data_root = 'data/DIOR/'
 metainfo = {
     'CLASSES':
-    ('airplane', 'airport', 'baseball field', 'basketball court', 'bridge',
-     'chimney', 'dam', 'expressway service area', 'expressway toll station',
-     'golf field', 'ground track field', 'harbor', 'overpass', 'ship',
-     'stadium', 'storage tank', 'tennis court', 'train station', 'vehicle',
-     'windmill')}
+    # ('airplane', 'airport', 'baseball field', 'basketball court', 'bridge',
+    #  'chimney', 'dam', 'expressway service area', 'expressway toll station',
+    #  'golf field', 'ground track field', 'harbor', 'overpass', 'ship',
+    #  'stadium', 'storage tank', 'tennis court', 'train station', 'vehicle',
+    #  'windmill')
+    ('airplane', 'airport', 'baseballfield', 'basketballcourt', 'bridge', 
+     'chimney', 'dam', 'Expressway-Service-area', 'Expressway-toll-station', 
+     'golffield', 'groundtrackfield', 'harbor', 'overpass', 'ship', 
+     'stadium', 'storagetank', 'tenniscourt', 'trainstation', 'vehicle', 
+     'windmill')
+}
 file_client_args = dict(backend='disk')
 train_pipeline = [
     dict(type='LoadImageFromFile', file_client_args=file_client_args),
